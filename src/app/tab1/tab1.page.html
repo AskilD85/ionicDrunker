@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+        Наконец то пятница, а значит...!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+        <img src="{{data?.url}}" alt="" />
+    <button class="btn btn-outline-primary my-button" (click)="randomdrunker()">Дальше...</button>
+      
+      <ion-card-header>
+        <ion-card-subtitle >Давай начнём!</ion-card-subtitle>
+        <ion-card-title>Добро пожаловать в ТЯП- ницу!</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Приложение для тех, кому скучно бухать одному!</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>Ресурсы</ion-label>
+      </ion-list-header>
+      <ion-item href="#">
+        <ion-icon slot="start" color="medium" name="book"></ion-icon>
+        <ion-label>Как правильно бухать</ion-label>
+      </ion-item>
+      <ion-item href="#">
+        <ion-icon slot="start" color="medium" name="build"></ion-icon>
+        <ion-label>Как собрать компанию для бухаловки</ion-label>
+      </ion-item>
+      <ion-item href="#">
+        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
+        <ion-label>Как пить и не попасть за решётку</ion-label>
+      </ion-item>
+      <ion-item href="#">
+        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
+        <ion-label>Что бывает после первой рюмки</ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>

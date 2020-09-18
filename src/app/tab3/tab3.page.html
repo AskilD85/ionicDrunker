@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab Three
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <button  (click)="click()">Запрос</button>
+  <button *ngIf="data?.length == 0 |async" (click)="getProducts()">Запрос</button>
+  
+    <ion-list>
+        <ion-grid fixed>
+          <ion-row class="ion-align-items-stretch">
+            <ion-col size="12"  *ngFor="let article of data | async">
+              <ion-card class="speaker-card">
+                <ion-button (click)="delete(article.id)">X</ion-button>
+                <ion-card-header>
+                  id: {{article?.id}}
+                  <ion-item>
+                    {{article?.title  }}
+                  </ion-item>
+                </ion-card-header>
+    
+                <ion-card-content>
+                  <ion-list>
+                    <ion-item  >
+                      <h3>{{article.body }}</h3>
+                    </ion-item>
+                  </ion-list>
+                </ion-card-content>
+    
+                
+                <ion-row class="ion-no-padding ion-justify-content-center">
+                  <ion-col size="4" class="ion-text-left">
+                    <ion-button fill="clear" size="small" color="primary" (click)="goToSpeakerTwitter(speaker)">
+                      <ion-icon name="logo-twitter" slot="start"></ion-icon>
+                      Tweet
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="4" class="ion-text-center">
+                    <ion-button fill="clear" size="small" color="primary" (click)="openSpeakerShare(speaker)">
+                      <ion-icon name="share-alt" slot="start"></ion-icon>
+                      Share
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="4" lass="ion-text-right">
+                    <ion-button fill="clear" size="small" color="primary" (click)="openContact(speaker)">
+                      <ion-icon name="chatboxes" slot="start"></ion-icon>
+                      Contact
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+</ion-content>
